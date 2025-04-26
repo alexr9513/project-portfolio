@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Scraper & Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Crypto Scraper & Dashboard</h1>
+            <p>Automated cryptocurrency data collection and visualization tool</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="project-content">
+            <h2>Live Dashboard</h2>
+            <iframe src="http://13.38.13.86:8050/" width="100%" height="800px" style="border: none;"></iframe>
+            <h2>About This Project</h2>
+            <p>This project combines shell scripting, data processing, and web visualization to create an automated cryptocurrency monitoring system. The solution scrapes real-time cryptocurrency data from leading platforms, stores it efficiently, and presents it through an interactive dashboard for analysis and decision-making.</p>
+            
+            <h3>Key Components</h3>
+            <ul>
+                <li><strong>Data Scraping:</strong> Bash script with regular expressions to extract cryptocurrency data from CoinGecko and CoinCodex</li>
+                <li><strong>Data Storage:</strong> Structured CSV format for efficient storage and retrieval of time-series cryptocurrency data</li>
+                <li><strong>Visualization Dashboard:</strong> Interactive Plotly-powered interface displaying price trends, volume analysis, and market correlations</li>
+                <li><strong>Automation:</strong> Scheduled hourly updates (8 AM to 6 PM) for continuous monitoring during active trading hours</li>
+            </ul>
+            
+            <h3>Technical Implementation</h3>
+            <ul>
+                <li><strong>Bash Scripting:</strong> Custom regular expressions for targeted data extraction from cryptocurrency websites</li>
+                <li><strong>Data Processing:</strong> Cleaning and structuring scraped data for analysis and visualization</li>
+                <li><strong>Dashboard Development:</strong> Plotly visualization library for creating interactive charts and metrics</li>
+                <li><strong>Cloud Deployment:</strong> Running on AWS EC2 instance for reliable 24/7 operation</li>
+                <li><strong>Task Scheduling:</strong> Cron jobs for automated hourly data updates</li>
+            </ul>
+            
+            <h3>Sample Code Snippet</h3>
+            <iframe src="https://github1s.com/alexr9513/crypto_scraper" width="100%" height="600px" style="border: none;"></iframe>
+            
+            <h3>Results & Impact</h3>
+            <p>The dashboard provides real-time insights into cryptocurrency market trends, enabling data-driven investment decisions. The automated nature of the system ensures consistent data collection without manual intervention, while the cloud deployment ensures high availability and accessibility from anywhere.</p>
+            
+            <h3>Future Enhancements</h3>
+            <ul>
+                <li>Machine learning integration for price prediction models</li>
+                <li>Expanded data sources to include sentiment analysis from social media</li>
+                <li>Email/SMS alerts for significant price movements</li>
+                <li>Historical data analysis tools for identifying long-term patterns</li>
+                <li>API endpoint creation for integration with other applications</li>
+            </ul>
+            
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
