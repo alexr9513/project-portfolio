@@ -34,16 +34,6 @@
                 <li><strong>Monte Carlo Simulation:</strong> Stochastic approach for complex option types including Asian options</li>
             </ul>
             
-            <h3>Technical Implementation</h3>
-            <p>The project is built with C++ and emphasizes object-oriented design principles. Key features include:</p>
-            <ul>
-                <li>Abstract base classes for options and pricing strategies</li>
-                <li>Template methods for generic algorithm implementations</li>
-                <li>Efficient matrix operations for binomial tree calculations</li>
-                <li>Random number generation for Monte Carlo paths</li>
-                <li>Statistical analysis tools for result interpretation</li>
-            </ul>
-            
             <div class="formula">
                 <p>Black-Scholes Formula:</p>
                 <p>C(S,t) = SN(d₁) - Ke^(-rT)N(d₂)</p>
@@ -52,17 +42,7 @@
             </div>
             
             <h3>Sample Code Snippet</h3>
-            <pre><code>// Example of pricing a European call option using Black-Scholes
-double EuropeanOption::BlackScholesPrice() const {
-    double d1 = (log(S0 / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * sqrt(T));
-    double d2 = d1 - sigma * sqrt(T);
-    
-    if (optionType == Call) {
-        return S0 * normalCDF(d1) - K * exp(-r * T) * normalCDF(d2);
-    } else {
-        return K * exp(-r * T) * normalCDF(-d2) - S0 * normalCDF(-d1);
-    }
-}</code></pre>
+            <iframe src="https://github1s.com/alexr9513/Option-Pricing" width="100%" height="600px" style="border: none;"></iframe>
             
             <h3>Results & Validation</h3>
             <p>The tool has been extensively validated against known analytical solutions and market data. Performance benchmarks show high accuracy with computational efficiency, making it suitable for both research and practical trading applications.</p>
