@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-weight: bold;
+        }
+        .project-content {
+            padding: 1.5rem;
+        }
+        .project-content h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #343a40;
+        }
+        .project-content p {
+            margin-bottom: 1.5rem;
+            color: #6c757d;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0069d9;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <p>Welcome to my project showcase</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Projects</h2>
+        <div class="projects">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-img">Project 1 Image</div>
+                <div class="project-content">
+                    <h3>Project 1</h3>
+                    <p>This is a brief description of Project 1. It was developed using cutting-edge technologies to solve a specific problem. The project demonstrates my skills in front-end development and UI/UX design.</p>
+                    <a href="project1.html" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-img">Project 2 Image</div>
+                <div class="project-content">
+                    <h3>Project 2</h3>
+                    <p>Project 2 showcases my back-end development abilities. It includes database integration, API development, and server-side processing to create a robust and scalable solution.</p>
+                    <a href="project2.html" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-img">Project 3 Image</div>
+                <div class="project-content">
+                    <h3>Project 3</h3>
+                    <p>Project 3 is a mobile application developed for both iOS and Android platforms. It features real-time data synchronization, offline functionality, and a clean, intuitive user interface.</p>
+                    <a href="project3.html" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-img">Project 4 Image</div>
+                <div class="project-content">
+                    <h3>Project 4</h3>
+                    <p>This data visualization project transforms complex datasets into interactive, easy-to-understand visual representations. It demonstrates my skills in data analysis and JavaScript visualization libraries.</p>
+                    <a href="project4.html" class="btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
