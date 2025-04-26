@@ -3,109 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        header {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
-        h1 {
-            margin: 0;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .project-content {
-            background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-        .project-image {
-            width: 100%;
-            height: 400px;
-            background-color: #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-            margin-top: 1rem;
-        }
-        .btn:hover {
-            background-color: #0069d9;
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 2rem;
-        }
-    </style>
+    <title>Option Pricing Tool</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Project 1</h1>
-            <p>A detailed look at my first project</p>
+            <h1>Option Pricing Tool</h1>
+            <p>A C++ application for pricing financial options</p>
         </div>
     </header>
 
     <main class="container">
         <div class="project-content">
-            <div class="project-image">Project 1 Image</div>
-            <h2>About Project 1</h2>
-            <p>This is a comprehensive description of Project 1. It was developed using cutting-edge technologies to solve a specific problem in the domain of web development. The project demonstrates my skills in front-end development and UI/UX design.</p>
+            <div class="project-image">Option Pricing Tool Interface</div>
+            <h2>About This Project</h2>
+            <p>This C++ application provides a robust framework for pricing various types of financial options using multiple pricing models. The tool supports European, American, and Asian options and implements several pricing methodologies including the Black-Scholes model, Cox-Ross-Rubinstein (CRR) binomial tree model, and Monte Carlo simulations.</p>
             
-            <h3>Technologies Used</h3>
+            <h3>Supported Option Types</h3>
             <ul>
-                <li>HTML5 & CSS3</li>
-                <li>JavaScript (ES6+)</li>
-                <li>React.js</li>
-                <li>Node.js</li>
-                <li>MongoDB</li>
+                <li><strong>European Options:</strong> Can only be exercised at expiration</li>
+                <li><strong>American Options:</strong> Can be exercised any time before expiration</li>
+                <li><strong>Asian Options:</strong> Value depends on the average price of the underlying asset</li>
             </ul>
             
-            <h3>Key Features</h3>
+            <h3>Pricing Models Implemented</h3>
             <ul>
-                <li>Responsive design that works on all devices</li>
-                <li>User authentication and authorization</li>
-                <li>Real-time data updates</li>
-                <li>Interactive user interface with smooth animations</li>
-                <li>Performance optimization for fast loading</li>
+                <li><strong>Black-Scholes Model:</strong> Analytical solution for European options</li>
+                <li><strong>Cox-Ross-Rubinstein (CRR) Binomial Tree:</strong> Numerical method for both European and American options</li>
+                <li><strong>Monte Carlo Simulation:</strong> Stochastic approach for complex option types including Asian options</li>
             </ul>
             
-            <h3>Development Process</h3>
-            <p>The development of this project started with careful planning and wireframing. I followed an agile methodology, iterating through design, development, and testing phases. The biggest challenge was implementing the real-time functionality, which was solved using WebSockets.</p>
+            <h3>Technical Implementation</h3>
+            <p>The project is built with C++ and emphasizes object-oriented design principles. Key features include:</p>
+            <ul>
+                <li>Abstract base classes for options and pricing strategies</li>
+                <li>Template methods for generic algorithm implementations</li>
+                <li>Efficient matrix operations for binomial tree calculations</li>
+                <li>Random number generation for Monte Carlo paths</li>
+                <li>Statistical analysis tools for result interpretation</li>
+            </ul>
             
-            <h3>Results & Impact</h3>
-            <p>The completed project resulted in a 40% improvement in user engagement and a significant reduction in load times compared to the previous solution. It has been well-received by users and stakeholders alike.</p>
+            <div class="formula">
+                <p>Black-Scholes Formula:</p>
+                <p>C(S,t) = SN(d₁) - Ke^(-rT)N(d₂)</p>
+                <p>where d₁ = [ln(S/K) + (r + σ²/2)T] / (σ√T)</p>
+                <p>and d₂ = d₁ - σ√T</p>
+            </div>
+            
+            <h3>Sample Code Snippet</h3>
+            <pre><code>// Example of pricing a European call option using Black-Scholes
+double EuropeanOption::BlackScholesPrice() const {
+    double d1 = (log(S0 / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * sqrt(T));
+    double d2 = d1 - sigma * sqrt(T);
+    
+    if (optionType == Call) {
+        return S0 * normalCDF(d1) - K * exp(-r * T) * normalCDF(d2);
+    } else {
+        return K * exp(-r * T) * normalCDF(-d2) - S0 * normalCDF(-d1);
+    }
+}</code></pre>
+            
+            <h3>Results & Validation</h3>
+            <p>The tool has been extensively validated against known analytical solutions and market data. Performance benchmarks show high accuracy with computational efficiency, making it suitable for both research and practical trading applications.</p>
+            
+            <h3>Future Enhancements</h3>
+            <ul>
+                <li>Support for exotic options (barrier, lookback)</li>
+                <li>Integration with real-time market data feeds</li>
+                <li>Parallel computing for Monte Carlo simulations</li>
+                <li>Implied volatility surface calibration</li>
+            </ul>
             
             <a href="index.html" class="btn">Back to Home</a>
         </div>
